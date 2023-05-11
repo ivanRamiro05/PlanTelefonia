@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class VentanaPrincipal extends JFrame {
     public PanelEntrada miPanelEntradaDatos;
     public PanelOperaciones miPanelOperaciones;
-    public PanelResultados miPanelResultados;
+    public PanelResultado miPanelResultado;
     
     
     //----------------------
@@ -33,9 +33,9 @@ public class VentanaPrincipal extends JFrame {
         this.add(miPanelOperaciones);
 
         //Creación y adición del PanelResultados
-        miPanelResultados = new PanelResultados();
-        miPanelResultados.setBounds(10,170,680,180);
-        this.add(miPanelResultados);
+        miPanelResultado = new PanelResultado();
+        miPanelResultado.setBounds(10,170,680,180);
+        this.add(miPanelResultado);
          //Caracteristicas de la ventana
          this.setTitle("Plan de telefonia");
          this.setSize(710,400);
