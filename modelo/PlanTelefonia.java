@@ -1,87 +1,74 @@
 package modelo;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
-
-
 public class PlanTelefonia {
-      //Atributos
-      private  int numeroCelular;
-      private  String Operador;
-      private  int CantidadMinutos;
-      private  int Valorminuto = 150;
-      private  int CostoPlan;
-  
-      
-  
-      public PlanTelefonia(){
-          
-      }
+    private int numeroCelular;
+    private String operador;
+    private int cantidadMinutos;
+    private double valorMinutos=300;
+    private double costoPlan;
+
+    public PlanTelefonia(String pOperador,int pNumeroCelular,int pCantidadMinutos){
+        this.operador= pOperador;
+        this.numeroCelular = pNumeroCelular;
+        this.cantidadMinutos = pCantidadMinutos;
+        
 
 
+    }
+    public PlanTelefonia() {
+    }
+    public void calcularCostoPlan(){
+        costoPlan= cantidadMinutos*valorMinutos;
+        if(operador.equals("Wom"))
+        {
+            costoPlan= costoPlan*(0.5);
+
+
+        }
+
+    }
 
     public int getNumeroCelular() {
         return numeroCelular;
     }
 
-
-
     public void setNumeroCelular(int numeroCelular) {
         this.numeroCelular = numeroCelular;
     }
 
-
-
     public String getOperador() {
-        return Operador;
+        return operador;
     }
-
-
 
     public void setOperador(String operador) {
-        Operador = operador;
+        this.operador = operador;
     }
-
-
 
     public int getCantidadMinutos() {
-        return CantidadMinutos;
+        return cantidadMinutos;
     }
-
-
 
     public void setCantidadMinutos(int cantidadMinutos) {
-        CantidadMinutos = cantidadMinutos;
+        this.cantidadMinutos = cantidadMinutos;
     }
 
-
-
-    public int getValorminuto() {
-        return Valorminuto;
+    public double getValorMinutos() {
+        return valorMinutos;
     }
 
-
-
-    public void setValorminuto(int valorminuto) {
-        Valorminuto = valorminuto;
+    public void setValorMinutos(double valorMinutos) {
+        this.valorMinutos = valorMinutos;
     }
-
-
-
-    public int getCostoPlan() {
+    public double getCostoPlan() {
         calcularCostoPlan();
-        return CostoPlan;
+        return costoPlan;
     }
-
-
-
-    public void setCostoPlan(int costoPlan) {
-        CostoPlan = costoPlan;
+    public void setCostoPlan(double costoPlan) {
+        this.costoPlan = costoPlan;
     }
+    
 
-    public void calcularCostoPlan(){
-        
-    }
-  
+
+   
+    
 }
